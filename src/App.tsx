@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
+console.log("process.env.API_URL", process.env.REACT_APP_API_URL);
 import countStyle from "./App.module.css";   // 여기서 사용한 countStyle은 아무 변수명으로 바꿔도 됨
 type CounterProps = {
   title: String;
@@ -48,7 +49,9 @@ function up() {
     body,
   })
     .then((response) => response.json())
-    .then((json) => console.log(json));
+    .then((result) => {
+      setCount(result.value)
+    });
 }
 
 //  function up() {
