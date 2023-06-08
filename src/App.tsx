@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
-console.log("process.env.API_URL", process.env.REACT_APP_API_URL);
 import countStyle from "./App.module.css";   // 여기서 사용한 countStyle은 아무 변수명으로 바꿔도 됨
+console.log("process.env.API_URL", process.env.REACT_APP_API_URL);
 type CounterProps = {
   title: String;
   // ?를 사용하는 이유는 있을 수도 있고 없을 수도 있을 때 사용 (그치만 typescript에서는 값이 없을 때(undefined)는 타입을 알 수 없으므로 명확히 해주는게 좋음)
@@ -12,7 +12,6 @@ type CounterProps2 = {
   title : String;
   initValue : number;
 }
-
 // 오른쪽과 같이 사용하면 typescript를 무시한다는 뜻이다. 타입 에러가 날 때 사용할 수 있지만 정확한 타입을 위처럼 적어줘야한다.  // @ts-ignore
 function Counter(props : CounterProps) {
 //  const countState = useState(50);  // useState를 하면 배열이 만들어짐
